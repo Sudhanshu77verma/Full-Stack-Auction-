@@ -1,4 +1,7 @@
 import React from 'react'
+import { Routes, Route} from 'react-router-dom'
+import Signup from './pages/Signup'
+import Login from './pages/Login'
 
 function App() {
   return (
@@ -6,7 +9,14 @@ function App() {
 
 
     <div>  
-         <p> app </p>
+     
+    <Routes>
+    <Route path='/sign-up' element={<Signup></Signup>} ></Route>
+    <Route path='/login' element={<Login></Login>} ></Route>
+    {/* <Route path='/sign-up' element={<Signup></Signup>} ></Route>
+    <Route path='/sign-up' element={<Signup></Signup>} ></Route> */}
+
+    </Routes>
     </div>
   )
 }
