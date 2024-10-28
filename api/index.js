@@ -1,4 +1,4 @@
-import express from  "express"
+import express, { application } from  "express"
  import mongoose from "mongoose"
  import dotenv from "dotenv"
  import userrouter from './route/user.route.js'
@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser"
 import cors from "cors"
 import companyrouter from './route/company.route.js'
 import jobrouter from './route/job.route.js'
+import applicationrouter from './route/application.route.js'
  dotenv.config()
 const Port = process.env.PORT || 3000
 mongoose.connect(process.env.MONGO)
@@ -28,6 +29,7 @@ app.use(cookieParser())
 app.use('/api/v1/user' , userrouter)
 app.use('/api/v1/company' , companyrouter)
 app.use('/api/v1/job',jobrouter)
+app.use('/api/v1/application' , applicationrouter)
 app.listen(Port , ()=>{
     console.log(`Server is running at ${Port}`)
 })
