@@ -37,9 +37,15 @@ const jobschema = new mongoose.Schema({
         required:true,
 
      },
-     application:{
-        type:String,
+     applications:
+     [{
+        type:mongoose.Schema.Types.ObjectId,
         ref:'Application',
+        required:true,
+     }],
+     experienceLevel:{
+      type:Number,
+      required:true,
      }
 
 })
